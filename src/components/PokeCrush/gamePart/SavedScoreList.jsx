@@ -7,8 +7,19 @@ export const SavedScoreList = () => {
     });
 
   return (
-    <div>{playernames&& playernames.map((player,index)=>{
-        return (<h3 key={index}> {player.name} </h3>)
-    })}</div>
+    <div className='savedscore'>
+      <h3 style={{color:"white"}}> SCORES</h3>
+       <ol>
+      {playernames&& playernames.map((player,index)=>{
+        return (
+        
+          <li key={index}>
+          <h3 >{index+1} - {player.name} </h3>
+          </li>
+          )
+          
+    })}
+    </ol>
+    </div>
   )
 }

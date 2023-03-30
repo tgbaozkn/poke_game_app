@@ -1,5 +1,5 @@
-import React from 'react'
-import { useState } from 'react';
+import React,{useState} from 'react'
+
 import { Col, Row } from 'react-bootstrap';
 
 
@@ -11,29 +11,35 @@ import { addScore } from './scoresSlice';
 export const ScoreBoard = ({score}) => {
   
   const [display,setDisplay] = useState(false);
+  const [showSaveButton,setShowSaveButton] = useState(true);
   const [playername, setPlayerName] = useState('');
   const handleChange = event => {
     const result = event.target.value.replace(/[^a-z]/gi, '');
-    
+
     setPlayerName(result);
 
   };
   const onClick=() =>{
-    setDisplay(!display)
+    setDisplay(true)
   }
   const dispatch = useDispatch();
   const onSubmit = (event)=>{
-    event.preventDefault();
-    dispatch(addScore({
-      playername : playername
-        }))
+    if(playername.length >=3){
+      setShowSaveButton(false)
+      event.preventDefault();
+      dispatch(addScore({
+        playername : playername
+          }))
+    }
+    
+  
    
   }
   return ( 
 
        <Row className="d-flex justify-content-center">
-        <Col className='col-3 '>
-          <Row>
+        <Col className='col-3  '>
+          <Row >
             <SavedScoreList/>
           </Row>
         </Col>
@@ -54,7 +60,7 @@ export const ScoreBoard = ({score}) => {
             minLength={3}
           ></input>
           <input  defaultValue={score}/>
-          <button  onClick={onSubmit}>Save</button>
+          {showSaveButton?<button onClick={onSubmit} >Save</button> :""}
           </>
        : <></>  
 

@@ -471,3 +471,17 @@ h3 {
   );
   color: rgb(75, 73, 73);
 }
+.savedscore {
+  width: 500px !important;
+  height: 300px;
+  overflow: hidden;
+  position: absolute;
+  z-index: 1;
+  top: 200px;
+  left: 60px;
+  overflow-y: auto;
+  border-radius: 30px;
+  box-shadow: rgba(255, 255, 255, 0.463) 0px 50px 100px -20px,
+    rgba(85, 83, 83, 0.675) 0px 30px 60px -30px,
+    rgba(216, 232, 247, 0.534) 0px -2px 6px 0px inset;
+}
