@@ -1,0 +1,34 @@
+.topbar {
+  background-color: #b74555;
+
+  font-family: "Rubik Bubbles", cursive;
+  letter-spacing: 0.3rem;
+
+  position: relative;
+  height: 60px;
+}
+/* .ww {
+  height: 1px;
+  width: 250px;
+} */
+@media screen and (max-width: 480px) {
+  .topbar {
+    padding-left: 50px;
+    padding-right: 50px;
+    height: 93px;
+    
+  }
+  .links a {
+    color: black !important;
+  }
+  #brand-topbar {
+    font-size: 12px;
+  }
+  .extra-box {
+    display: none !important;
+  }
+}
+
+.info {
+  margin-right: 60px;
+}

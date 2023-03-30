@@ -1,0 +1,473 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Rubik+Bubbles&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+.container_app {
+  background-color: rgb(254, 247, 238);
+  padding: 70px 0px;
+  height: 100%;
+}
+
+.left-content {
+  padding-left: 4vw;
+  font-family: "Dancing Script", cursive;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 0.1fr));
+  grid-gap: 0.8rem;
+}
+.cardd {
+  background-color: rgb(119, 231, 219);
+  border-radius: 1rem;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  box-sizing: border-box;
+  height: 100px;
+  font-size: small;
+  text-transform: capitalize;
+  width: 180px;
+}
+.card-write {
+  font-size: 1.3rem;
+}
+.img {
+  height: 75%;
+}
+.right-content {
+  text-align: center;
+  color: black;
+  font-family: "Roboto", sans-serif !important;
+  text-transform: capitalize;
+}
+.right-content img {
+  height: 150px;
+}
+.right-content h1 {
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-family: "Rubik Bubbles", cursive;
+}
+.abilities {
+  width: 70%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+.abilities .group {
+  background-color: #8b7700;
+  color: white;
+  padding: 0.3rem;
+  text-align: center;
+  border-radius: 8px;
+  margin-left: 0.5rem;
+  font-family: "Roboto", sans-serif;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.btn-group {
+  display: flex;
+}
+.btn-group button {
+  outline: none;
+  border: none;
+  width: 150px;
+  padding: 0.3rem 0;
+  margin: 1rem;
+  font-size: 17px;
+  font-weight: bold;
+  color: white;
+  background-color: #b74555;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.left-aligned {
+  text-align: center;
+  padding: 3px;
+}
+.poke {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 38%;
+}
+.startb {
+  height: 120px;
+  width: auto;
+  cursor: grab;
+}
+.ss {
+  height: 10px;
+  width: 100px;
+}
+
+.imagepoke {
+  height: 250px;
+}
+h4 {
+  text-align: center;
+  font-family: "Rubik Bubbles", cursive;
+  border: 3px black solid;
+  width: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  background-color: #e8bec3;
+  padding: 1px;
+}
+h4:active {
+  padding: 5px;
+  background-color: #a54954;
+  color: aliceblue;
+  cursor: pointer;
+  border: none;
+}
+.bpoke {
+  margin-top: 100px;
+  border: none;
+  border-radius: 5px 5px;
+  text-align: center;
+  color: white;
+  background-color: black;
+  font-weight: bold;
+  padding: 5px;
+}
+h3 {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Rubik Bubbles", cursive;
+  color: #b74555;
+}
+
+.loading {
+  height: 500px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.searc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+.btn {
+  cursor: pointer;
+  font-style: italic;
+  opacity: 0.6;
+  font-size: 10px !important;
+}
+.btn:hover {
+  background-color: #f4511e !important;
+  border: none;
+  color: white !important;
+  font-style: normal;
+  transition: 0.2s;
+  font-size: 16px !important;
+}
+.fightgame {
+  text-align: left;
+  border-right: 1px solid black;
+}
+
+.pokestable {
+  border: 0.5px dotted gray;
+  transform: scale(0.75);
+  cursor: pointer;
+  height: 50px !important;
+  width: 40px !important;
+  padding: 0;
+}
+.pokestable:hover {
+  background-color: rgba(241, 195, 206, 0.325);
+  transform: scale(0.95);
+}
+
+.maincrush {
+  display: flex;
+  width: 100%;
+
+  margin: 0 auto;
+  justify-content: center;
+  height: calc(100vh - 60px);
+  animation-name: example;
+  background-image: url("https://media.giphy.com/media/IpSc0bp7LmGC4/giphy.gif");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  overflow: hidden;
+}
+
+.gamecrush {
+  width: 490px;
+  height: 490px;
+  display: flex;
+  flex-wrap: wrap;
+  left: 35vw;
+  box-shadow: 5px 5px 10px rgba(116, 111, 111, 0.915);
+  position: absolute;
+  top: 150px;
+  background-color: rgba(255, 255, 255, 0.582);
+  z-index: 2;
+}
+.gamecrush img {
+  width: 70px;
+  height: 70px;
+  transform: scale(1.05);
+  border: 0.5px dotted;
+  border-image-source: linear-gradient(to left, #f39696, #4fd858);
+  border-image-slice: 1;
+  cursor: move;
+  box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+.clock {
+  border: solid 7px #b74555;
+  height: 65px;
+  border-radius: 40%;
+  text-align: center;
+  margin-top: 10px;
+  position: absolute;
+  top: 65px;
+  left: 35vw;
+  margin-right: 60px;
+  width: 75px;
+  font-family: "Rubik Bubbles";
+  color: white;
+}
+.again {
+  border: solid 7px #b74555;
+  height: 120px;
+  border-radius: 40%;
+  text-align: center;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 160px;
+  font-family: "Rubik Bubbles", cursive;
+  font-size: 32px !important;
+}
+
+.timeisover {
+  font-size: 52px;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Rubik Bubbles", cursive;
+}
+@media screen and (max-width: 480px) {
+  .gamecrush {
+    width: 280px;
+    height: 280px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    left: 5vw;
+  }
+  .gamecrush img {
+    width: 40px;
+    height: 40px;
+    transform: scale(1.2);
+    cursor: pointer;
+  }
+
+  .clock {
+    border: solid 2px #b74555;
+    height: 42px;
+    border-radius: 20%;
+    font-size: 21px !important;
+    width: 42px;
+    position: absolute;
+    text-align: center;
+    top: 95px;
+    left: 40vw;
+  }
+  .again {
+    height: 5%;
+    width: 80px;
+    font-size: 16px !important;
+    padding: 12px !important;
+    text-align: left !important;
+    justify-content: left !important;
+    align-items: left !important;
+    position: absolute;
+  }
+  .arrow-down {
+    display: none;
+  }
+  .arrow-left {
+    display: none;
+  }
+  .arrow-right {
+    display: none;
+  }
+  .arrow-up {
+    display: none;
+  }
+  .scoreside input {
+    margin: 5px;
+    margin-left: 5px !important;
+
+    width: 70px !important;
+  }
+  .scoreside label {
+    display: none;
+  }
+
+  .timeisover {
+    font-size: 28px;
+    color: white;
+    text-align: left;
+    text-transform: uppercase;
+    font-family: "Rubik Bubbles", cursive;
+  }
+
+  .register {
+    color: white;
+    font-weight: bold;
+    display: flex;
+    align-items: left !important;
+    justify-content: left !important;
+    margin-bottom: 30px;
+    -webkit-animation: fadeInFromNone 2s infinite;
+    animation: fadeInFromNone 2s infinite;
+    text-align: left !important;
+    margin-top: 30px !important;
+    font-size: 14px;
+  }
+  .scoreside h3 {
+    text-align: left;
+  }
+}
+.arrow-down {
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  z-index: 5;
+  top: 54px;
+  left: 24px;
+}
+.arrow-right {
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  z-index: 5;
+  top: 24px;
+  left: 54px;
+  transform: rotate(270deg);
+}
+
+.arrow-left {
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  z-index: 5;
+  top: 24px;
+  left: -7px;
+  transform: rotate(90deg);
+}
+.arrow-up {
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  z-index: 5;
+  top: -5px;
+  left: 24px;
+  transform: rotate(180deg);
+}
+.animate-text {
+  color: white;
+
+  font-size: 18px;
+  -webkit-animation: fadeInFromNone 2s infinite;
+  animation: fadeInFromNone 2s infinite;
+}
+@-webkit-keyframes fadeInFromNone {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+
+  100% {
+    display: block;
+    opacity: 0.7;
+  }
+}
+
+@keyframes fadeInFromNone {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+
+  100% {
+    display: block;
+    opacity: 0.7;
+  }
+}
+.animatebg {
+  animation: onoff 0.2s alternate;
+}
+
+@keyframes onoff {
+  0% {
+    background-color: #b74555;
+  }
+
+  100% {
+    background-color: aqua;
+  }
+}
+
+.register {
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  -webkit-animation: fadeInFromNone 2s infinite;
+  animation: fadeInFromNone 2s infinite;
+  text-align: center;
+  margin-top: 30px !important;
+}
+.register:hover {
+  color: black;
+  background-color: white;
+  border: 2px dotted #e1a0a0;
+  cursor: pointer;
+}
+.scoreside input {
+  margin: 5px;
+  margin-left: 15px;
+  text-align: center;
+  width: 90px;
+  outline: none;
+}
+.scoreside label {
+  color: white;
+}
+.scoreside button {
+  margin-left: 10px;
+  background: linear-gradient(
+    0.35turn,
+    rgba(225, 139, 139, 0.598),
+    65%,
+    rgba(255, 255, 255, 0.579)
+  );
+  color: rgb(255, 255, 255);
+  font-family: "Rubik Bubbles", cursive;
+  border: none;
+  border-radius: 30px;
+  height: 30px;
+}
+.scoreside button:hover {
+  background: linear-gradient(
+    0.35turn,
+    rgba(255, 255, 255, 0.842),
+    65%,
+    rgba(225, 139, 139, 0.749)
+  );
+  color: rgb(75, 73, 73);
+}

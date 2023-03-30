@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import "./components/style.css"
+import { Col } from "react-bootstrap";
+
+
+import {Info} from "./components/Info";
+import { TopBar } from "./components/TopBar";
+import { Route, Routes } from "react-router-dom";
+import { MainPage } from "./components/MainPage/MainPage";
+import GamePage from "./components/GamePage/GamePage";
+
+
+import FightPage from "./components/FightingPage/FightPage";
+import { GameP } from "./components/PokeCrush/gamePart/GameP";
+
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    
+
+    
+    <Routes>
+        <Route path="/" element={ <>   <TopBar /> <MainPage /> </> } />
+        <Route path="info" element={  <Col>   <TopBar /> <Info/></Col>} />
+        <Route path="game" element={  <>   <TopBar /> <GamePage/></>} />
+        <Route path="fight" element={  <>   <TopBar /> <FightPage/></>} />
+        <Route path="crush" element={  <>   <TopBar /> <GameP/></>} />
+
+       
+      </Routes>
+     
+
   );
 }
 
