@@ -4,12 +4,12 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const scoresSlice = createSlice({
     name : "playername",
-    initialState : [],
+    initialState : [{}],
     reducers: {
         addScore: (state, action)=>{
             const newScore = {
-  
-                name: action.payload.playername
+                name: action.payload.playername,
+                score: action.payload.score
             }
             state.push(newScore);
         }

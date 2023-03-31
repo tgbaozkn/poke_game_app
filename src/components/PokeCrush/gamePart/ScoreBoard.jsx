@@ -28,7 +28,8 @@ export const ScoreBoard = ({score}) => {
       setShowSaveButton(false)
       event.preventDefault();
       dispatch(addScore({
-        playername : playername
+        playername : playername,
+        score:score
           }))
     }
     
