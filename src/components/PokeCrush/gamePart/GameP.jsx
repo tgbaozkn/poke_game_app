@@ -10,6 +10,7 @@ import animationData from '../../../lotties/arrow.json'
 
 import { ScoreBoard } from './ScoreBoard';
 
+
 export const GameP = () => {
     const [currentPokeArrangement, setCurrentPokeArrangement] = useState([])
     const [cellBeingDragged,setCellBeingDragged] = useState(null);
@@ -17,7 +18,7 @@ export const GameP = () => {
 
     const [arr, setArr ] = useState([] )
     const [scoreDisplay, setScoreDisplay] = useState(0)
-    const [timer, setTimer] = useState(1)
+    const [timer, setTimer] = useState(45)
     const [clickedIndex, setClickedIndex] = useState(-1);
     const randomArray = Array.from({length: 5}, () => Math.floor(Math.random() * 28 +1))
     let newArray = []
@@ -133,6 +134,7 @@ export const GameP = () => {
         
        } 
     }
+    
     useEffect(()=> {
         pokeSet();
         
@@ -302,7 +304,7 @@ export const GameP = () => {
           <div style={{height:"80px", width:"100%"}}></div>
          <ScoreBoard score={scoreDisplay}/> 
          <div style={{height:"70px", width:"100%"}}></div>
-         <button className='again' onClick={()=> { setTimer(1)}} > Play again </button>
+         <button className='again' onClick={()=> { setTimer(45)}} > Play again </button>
          </Col> 
         
          
