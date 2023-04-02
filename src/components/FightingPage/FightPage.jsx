@@ -23,12 +23,11 @@ export default function FightPage({
   const [player2FontSize, setPlayer2FontSize] = useState(24); // initial font size of player 2
   const [currentPlayer, setCurrentPlayer] = useState(2);
   const [timeoutId, setTimeoutId] = useState(null);
-  const[display,setDisplay] = useState("none")
+  const [display, setDisplay] = useState("none");
   const navigate = useNavigate();
   //battle log glsin
 
   useEffect(() => {
- 
     return () => {
       clearTimeout(timeoutId);
     };
@@ -38,20 +37,20 @@ export default function FightPage({
     clearTimeout(timeoutId);
     if (currentPlayer === 1) {
       setPlayer1FontSize(50);
-      setDisplay("block")
+      setDisplay("block");
     } else {
       setPlayer2FontSize(50);
-      setDisplay("block")
+      setDisplay("block");
     }
 
     setTimeoutId(
       setTimeout(() => {
         if (currentPlayer === 1) {
           setPlayer1FontSize(24);
-          setDisplay("none")
+          setDisplay("none");
         } else {
           setPlayer2FontSize(24);
-          setDisplay("none")
+          setDisplay("none");
         }
         player ? setCurrentPlayer(1) : setCurrentPlayer(2);
       }, 500)
@@ -67,14 +66,14 @@ export default function FightPage({
     } else {
       player ? setShp(shp - 2) : setFhp(fhp - 2);
     }
-    if(fhp===0 || shp===0){
-      return ;
+    if (fhp === 0 || shp === 0) {
+      return;
     }
     handleButtonClick();
     setPlayer(!player); //switch to other player
   }
   function specialAttackF() {
-    if(shp===0 || fhp=== 0){
+    if (shp === 0 || fhp === 0) {
       return "";
     }
     handleButtonClick();
@@ -85,7 +84,7 @@ export default function FightPage({
   }
 
   function specialAttackS() {
-    if(shp===0 || fhp=== 0){
+    if (shp === 0 || fhp === 0) {
       return "";
     }
     handleButtonClick();
@@ -94,7 +93,7 @@ export default function FightPage({
     setPlayer(true);
   }
   function specialDefenseF() {
-    if(shp===0 || fhp=== 0){
+    if (shp === 0 || fhp === 0) {
       return "";
     }
     setPlayer1FontSize(50);
@@ -102,7 +101,6 @@ export default function FightPage({
     setTimeoutId(
       setTimeout(() => {
         setPlayer1FontSize(24);
-
       }, 350)
     );
     setFpdefense(fpdefense - fpdefense / 2);
@@ -110,14 +108,13 @@ export default function FightPage({
     setPlayer(false);
   }
   function specialDefenseS() {
-    if(shp===0 || fhp=== 0){
+    if (shp === 0 || fhp === 0) {
       return "";
     }
     setPlayer2FontSize(50);
     setTimeoutId(
       setTimeout(() => {
         setPlayer2FontSize(24);
-
       }, 350)
     );
     setSpdefense(spdefense - spdefense / 2);
@@ -173,8 +170,25 @@ export default function FightPage({
   }
   return (
     <Container fluid className="playground ">
-      <Row className="roww"></Row>
-      <div className="hit" style={{left:player?"180px":"",right:player?"":"150px", display:display}}></div>
+      <Row className="roww">
+        {display === "none"
+          ? ""
+          : !player
+          ? `1.${firstPlayer.name.toUpperCase()} HIT `
+          : `2.${secondPlayer.name.toUpperCase()} HIT `}
+        {display === "none" ? ""
+          : player
+          ? ` 1.${firstPlayer.name.toUpperCase()}!`
+          : ` 2.${secondPlayer.name.toUpperCase()}! `}
+      </Row>
+      <div
+        className="hit"
+        style={{
+          left: player ? "180px" : "",
+          right: player ? "" : "150px",
+          display: display,
+        }}
+      ></div>
       <Row>
         <Col xs="auto" md={4} className="text-center">
           {player ? (
@@ -278,7 +292,11 @@ export default function FightPage({
         <Col s={5} md={4} className="text-center">
           <h6 className="mt-5"> CLICK </h6>
           <Container>
-            <Lottie animationData={animationData} id="fight" onClick={shp===0 || fhp===0 ? "" :press} />
+            <Lottie
+              animationData={animationData}
+              id="fight"
+              onClick={shp === 0 || fhp === 0 ? "" : press}
+            />
           </Container>
 
           <h6> AND FIGHT!! </h6>

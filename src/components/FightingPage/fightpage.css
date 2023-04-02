@@ -76,6 +76,12 @@ h6 {
 }
 .roww {
   height: calc(100vh / 6.9);
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-size: 28px;
+  letter-spacing: 5px;
+  font-weight: bold;
 }
 .rip {
   height: 150px;
