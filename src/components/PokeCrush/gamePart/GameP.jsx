@@ -240,7 +240,7 @@ export const GameP = () => {
    
    
         <div className='gamecrush'>
-           
+        
         {
          currentPokeArrangement.map((poke,index)=> {
              return (
