@@ -184,8 +184,8 @@ export default function FightPage({
       <div
         className="hit"
         style={{
-          left: player ? "180px" : "",
-          right: player ? "" : "150px",
+          left: player ? "200px" : "",
+          right: player ? "" : "200px",
           display: display,
         }}
       ></div>
@@ -212,7 +212,7 @@ export default function FightPage({
             <>
               <h3 style={{ color: "black" }}>1.{firstPlayer.name}</h3>
               {fhp === 0 ? (
-                <img src={rip} className="rip mt-5" />
+                <img src={rip} className="rip mt-5" alt="" />
               ) : (
                 <img
                   alt=""
