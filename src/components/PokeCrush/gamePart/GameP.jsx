@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import Sound from "react-sound"
+
 import Lottie from "lottie-react";
+import useSound from 'use-sound';
 import { Col, Row } from 'react-bootstrap'
 
 
@@ -15,7 +16,7 @@ export const GameP = () => {
     const [currentPokeArrangement, setCurrentPokeArrangement] = useState([])
     const [cellBeingDragged,setCellBeingDragged] = useState(null);
     const [cellBeingReplaced,setCellBeingReplaced] = useState(null);
-
+    const [playMusic] = useSound(music, { autoplay: true });
     const [arr, setArr ] = useState([] )
     const [scoreDisplay, setScoreDisplay] = useState(0)
     const [timer, setTimer] = useState(45)
@@ -234,12 +235,9 @@ export const GameP = () => {
 
         <h1 className='clock'> {timer}  </h1>
           
- 
-       <Sound
-        url ={music}
-        playStatus={Sound.status.PLAYING}
-       
-       />
+            {playMusic}
+     
+   
    
         <div className='gamecrush'>
            
