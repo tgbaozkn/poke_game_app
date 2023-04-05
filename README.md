@@ -1,5 +1,12 @@
-# Getting Started with Create React App
+# Pokemon Game Application with you! 
+You can play the fighting game or the matching game, whatever you want!
 
+# If you want to play click : https://pokegamesbytgba.netlify.app/
+
+
+https://user-images.githubusercontent.com/39098806/230137523-47c59cdf-265e-4a6a-89d2-32820beff72b.mp4
+
+# Getting Started with Create React App
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
