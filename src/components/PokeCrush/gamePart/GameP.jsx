@@ -24,7 +24,7 @@ export const GameP = () => {
     const randomArray = Array.from({length: 5}, () => Math.floor(Math.random() * 28 +1))
     let newArray = []
     const handleClick = (index) => {
-        setClickedIndex(index); // update state with the index of the clicked element
+        setClickedIndex(index); 
       };
 
     const pokeSet = async () => {

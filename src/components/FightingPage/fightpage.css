@@ -96,10 +96,10 @@ h6 {
 .hit {
   position: absolute;
   z-index: 1;
-  top: 280px;
-  right: 200px;
-  height: 230px;
-  width: 200px;
+  top: 320px;
+  text-align: center;
+  height: 200px;
+  width: 180px;
   background: linear-gradient(
     135deg,
     rgba(255, 255, 255, 0) 12%,
@@ -118,4 +118,35 @@ h6 {
     rgba(179, 84, 84, 1) 99%,
     rgba(255, 255, 255, 0) 100%
   );
+  margin-left: 130px;
+  margin-right: 140px;
+}
+@media (min-width: 1540px) and (max-width: 2100px) {
+  .hit {
+    margin-left: 220px;
+    margin-right: 220px;
+  }
+}
+@media (min-width: 2200px) {
+  .hit {
+    margin-left: 310px;
+    margin-right: 310px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1025px) {
+  .hit {
+    margin-left: 80px;
+    margin-right: 90px;
+  }
+}
+@media (min-width: 480px) and (max-width: 768px) {
+  .hit {
+    margin-left: 30px;
+    margin-right: 40px;
+  }
+}
+@media (max-width: 480px) {
+  .hit {
+    height: 0;
+  }
 }

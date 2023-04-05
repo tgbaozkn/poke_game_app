@@ -12,8 +12,8 @@ export default function FightPage({
   imageF,
   imageS,
 }) {
-  const [fhp, setFhp] = useState(firstPlayer.hp);
-  const [shp, setShp] = useState(secondPlayer.hp);
+  const [fhp, setFhp] = useState(firstPlayer.hp *3);
+  const [shp, setShp] = useState(secondPlayer.hp *3);
   const [fpattack, setFpattack] = useState(firstPlayer["special-attack"]);
   const [spattack, setSpattack] = useState(secondPlayer["special-attack"]);
   const [fpdefense, setFpdefense] = useState(firstPlayer["special-defense"]);
@@ -24,8 +24,9 @@ export default function FightPage({
   const [currentPlayer, setCurrentPlayer] = useState(2);
   const [timeoutId, setTimeoutId] = useState(null);
   const [display, setDisplay] = useState("none");
+  const [showHpLost, setShowHpLost] = useState();
   const navigate = useNavigate();
-  //battle log glsin
+
 
   useEffect(() => {
     return () => {
@@ -58,13 +59,13 @@ export default function FightPage({
   }
 
   function press() {
-    console.log("lottie press");
-
+    // console.log("lottie press");
+    setShowHpLost(-8)
     if (fhp === shp) {
       alert("You should use a special skill!!!");
       return;
     } else {
-      player ? setShp(shp - 2) : setFhp(fhp - 2);
+      player ? setShp(shp - 2*4) : setFhp(fhp - 2*4);
     }
     if (fhp === 0 || shp === 0) {
       return;
@@ -77,7 +78,7 @@ export default function FightPage({
       return "";
     }
     handleButtonClick();
-
+    setShowHpLost(-fpattack/11)
     setFpattack(fpattack - fpattack / 3);
     setShp(shp - fpattack / 11);
     setPlayer(false);
@@ -89,6 +90,7 @@ export default function FightPage({
     }
     handleButtonClick();
     setSpattack(spattack - spattack / 3);
+    setShowHpLost(-spattack/11)
     setFhp(fhp - spattack / 11);
     setPlayer(true);
   }
@@ -97,13 +99,14 @@ export default function FightPage({
       return "";
     }
     setPlayer1FontSize(50);
-
+   
     setTimeoutId(
       setTimeout(() => {
         setPlayer1FontSize(24);
       }, 350)
     );
     setFpdefense(fpdefense - fpdefense / 2);
+    setShowHpLost( fpdefense / 15)
     setFhp(fhp + fpdefense / 15);
     setPlayer(false);
   }
@@ -118,6 +121,7 @@ export default function FightPage({
       }, 350)
     );
     setSpdefense(spdefense - spdefense / 2);
+    setShowHpLost( spdefense / 15)
     setShp(shp + spdefense / 15);
     setPlayer(true);
   }
@@ -163,7 +167,7 @@ export default function FightPage({
         navigate("/");
       }
     }
-  }, [shp, fhp, spattack, fpattack, spdefense, fpdefense]);
+  }, [shp, fhp, spattack, fpattack, spdefense, fpdefense,navigate]);
 
   function backToMainPage() {
     navigate("/");
@@ -180,17 +184,20 @@ export default function FightPage({
           : player
           ? ` 1.${firstPlayer.name.toUpperCase()}!`
           : ` 2.${secondPlayer.name.toUpperCase()}! `}
+
       </Row>
-      <div
-        className="hit"
-        style={{
-          left: player ? "200px" : "",
-          right: player ? "" : "200px",
-          display: display,
-        }}
-      ></div>
+        <h3 style={{color:"white"}}> {shp < secondPlayer.hp*3 ? showHpLost.toFixed(1) :""} points!</h3>
       <Row>
         <Col xs="auto" md={4} className="text-center">
+        <div
+                className="hit"
+                style={{
+                  left: player ? "1px" : "",
+                  right: player ? "" : "1px",
+                  display: display,
+                }}
+              ></div>
+   
           {player ? (
             <Lottie
               style={{
@@ -211,16 +218,20 @@ export default function FightPage({
           {firstPlayer && (
             <>
               <h3 style={{ color: "black" }}>1.{firstPlayer.name}</h3>
+                   
               {fhp === 0 ? (
                 <img src={rip} className="rip mt-5" alt="" />
               ) : (
+        
+              
                 <img
                   alt=""
                   src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${imageF}.png`}
                   className="imagepoke"
                 />
+          
               )}
-
+                   
               <h3
                 style={{
                   color: "black",
